@@ -1,0 +1,15 @@
+init_config:
+
+instances:
+    -   apache_status_url: <%= apache_status_url %>
+    		<% unless apache_user == nil %>
+		    apache_user: <%= apache_user %>
+		    <% end %>
+    		<% unless apache_password == nil %>
+		    apache_password: <%= apache_password %>
+		    <% end %>
+
+        <% unless tags == nil %>
+        tags:
+            -	<% tags.each do |tag| print "#{tag} " end %>
+        <% end %>
