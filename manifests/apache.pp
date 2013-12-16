@@ -4,21 +4,21 @@ define dd_agent::apache(
   $apache_user      = undef,
   $apache_password  = undef,
   $tags             = undef
-  ) {
+) {
 
-  # check if parent is available
-  if !defined(Class['dd_agent']) {
-    fail('The dd_agent base class must be included before this module can be used')
-  }
+    # check if parent is available
+    if !defined(Class['dd_agent']) {
+      fail('The dd_agent base class must be included before this module can be used')
+    }
 
-  $app = 'apache'
+    $app = 'apache'
 
-  file { "${dd_agent::config_dir}/${app}.yaml":
-    ensure  => 'file',
-    backup  => '.puppetold',
-    content => template("dd_agent/${app}.yaml.erb"),
-    replace => true,
-    notify  => Service['datadog-agent']
-  }
+    file { "${dd_agent::config_dir}/${app}.yaml":
+      ensure  => 'file',
+      backup  => '.puppetold',
+      content => template("dd_agent/${app}.yaml.erb"),
+      replace => true,
+      notify  => Service['datadog-agent']
+    }
 
 }
