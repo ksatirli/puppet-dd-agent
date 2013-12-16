@@ -4,6 +4,7 @@ define dd_agent::mysql(
   $user           = undef,
   $pass           = undef,
   $port           = undef,
+  $sock           = undef,
   $defaults_file  = undef,
   $replication    = undef,
   $galera_cluster = undef
