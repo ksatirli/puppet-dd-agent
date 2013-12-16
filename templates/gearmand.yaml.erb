@@ -1,0 +1,7 @@
+init_config:
+
+instances:
+  - server: <%= @server %>
+    port: <%= @port %>
+    <% if @tags.kind_of?(Array) %>tags:
+        -	<% @tags.each do |tag| %><%= tag %> <% end end %>
