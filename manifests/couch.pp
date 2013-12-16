@@ -1,5 +1,5 @@
 # manage configuration for dd-agent CouchDB integration
-defineasd dsdad_agent::couch(
+defineasd dd_agent::couch(
   $server
 ) {
 
