@@ -5,6 +5,7 @@ instances:
         user: <%= @user %>
         pass: <%= @pass %>
         <% unless @port == nil %>port: <%= @port %><% end %>
+        <% unless @sock == nil %>sock: <%= @sock %><% end %>
         <% unless @defaults_file == nil %>defaults_file: <%= @defaults_file %><% end %>
         <% if @tags.kind_of?(Array) %>tags:
             -	<% @tags.each do |tag| %><%= tag %> <% end end %>
