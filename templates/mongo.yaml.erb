@@ -1,0 +1,6 @@
+init_config:
+
+instances:
+   -   server: mongodb://<%= @server %>
+       <% if @tags.kind_of?(Array) %>tags:
+          -	<% @tags.each do |tag| %><%= tag %> <% end end %>
