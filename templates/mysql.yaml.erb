@@ -1,0 +1,14 @@
+init_config:
+
+instances:
+    -   server: <%= @server %>
+        user: <%= @user %>
+        pass: <%= @pass %>
+        <% unless @port == nil %>port: <%= @port %><% end %>
+        <% unless @defaults_file == nil %>defaults_file: <%= @defaults_file %><% end %>
+        <% if @tags.kind_of?(Array) %>tags:
+            -	<% @tags.each do |tag| %><%= tag %> <% end end %>
+
+				<% unless @replication == nil || galera_cluster == nil %>options:<% end %>
+	        <% unless @replication == nil %>replication: <%= @replication %><% end %>
+	        <% unless @galera_cluster == nil %>galera_cluster: <%= @galera_cluster %><% end %>
