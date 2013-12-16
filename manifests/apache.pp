@@ -3,7 +3,8 @@ define dd_agent::apache(
   $apache_status_url,
   $apache_user      = undef,
   $apache_password  = undef,
-  $tags             = undef) {
+  $tags             = undef
+  ) {
 
   # check if parent is available
   if !defined(Class['dd_agent']) {
