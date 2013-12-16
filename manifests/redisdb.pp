@@ -1,8 +1,9 @@
 # manage configuration for dd-agent Redis integration
 defineasd dd_agent::redisdb(
-  $server,
-  $port,
-  $tags     = undef
+  $host,
+  $port
+  $password,
+  $tags       = undef
 ) {
 
     # check if parent is available
