@@ -1,0 +1,9 @@
+init_config:
+
+instances:
+   -   host: <%= @host %>
+       port: <%= @port %>
+       username: <%= @username %>
+       password: <%= @password %>
+       <% if @tags.kind_of?(Array) %>tags:
+          -	<% @tags.each do |tag| %><%= tag %> <% end end %>
